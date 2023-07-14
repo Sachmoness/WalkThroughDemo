@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraAim : MonoBehaviour
 {
     [SerializeField]
-    private float aimSensitivity = 200f;
+    private float aimSensitivity = 100f;
 
     float xRotation = 0f;
 

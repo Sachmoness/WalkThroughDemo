@@ -5,20 +5,25 @@ public class PlayerMovement : MonoBehaviour
 
     float xDirec, zDirec;
 
-    public CharacterController charController;
+    private CharacterController _charController;
 
     [SerializeField]
     private float _movementSpeed = 10f;
 
     void Start()
     {
-        
+        _charController = GetComponent<CharacterController>();
     }
 
     void Update()
     {
         PlayerInput();
         Move();
+
+        //temp for the build
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            Application.Quit();
+        }
     }
 
     void PlayerInput()
@@ -30,6 +35,6 @@ public class PlayerMovement : MonoBehaviour
     void Move(){
         Vector3 moveDirec = transform.right * xDirec + transform.forward * zDirec;
 
-        charController.Move(moveDirec * _movementSpeed * Time.deltaTime);
+        _charController.Move(moveDirec * _movementSpeed * Time.deltaTime);
     }
 }
