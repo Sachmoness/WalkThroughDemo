@@ -19,6 +19,11 @@ public class PlayerMovement : MonoBehaviour
     {
         PlayerInput();
         Move();
+
+        //temp for the build
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            Application.Quit();
+        }
     }
 
     void PlayerInput()
